@@ -1,0 +1,11 @@
+query GetContacts($page: Int = 1, $pageSize: Int = 10) {
+  getContacts(page: $page, pageSize: $pageSize) {
+    id
+    name
+    email
+    subject
+    message
+    attachmentName
+    createdIn
+  }
+}

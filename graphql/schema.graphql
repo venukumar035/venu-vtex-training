@@ -1,0 +1,39 @@
+# --- Types & Query ---
+type Contact {
+  id: String
+  name: String
+  email: String
+  subject: String
+  message: String
+  attachmentName: String
+  createdIn: String
+}
+
+type Query {
+  getContacts(page: Int, pageSize: Int): [Contact]
+    @cacheControl(scope: PRIVATE)
+    @auth(scope: PUBLIC)
+}
+
+# --- Add Mutation & Types for Contact Us Form ---
+
+input ContactFormInput {
+  name: String!
+  email: String!
+  subject: String!
+  message: String!
+  recaptchaToken: String!
+  attachment: Upload
+}
+
+type ContactFormResponse {
+  success: Boolean!
+  id: String
+  message: String!
+}
+
+type Mutation {
+  submitContactForm(input: ContactFormInput!): ContactFormResponse
+    @cacheControl(scope: PRIVATE)
+    @auth(scope: PUBLIC)
+}

@@ -1,0 +1,17 @@
+{
+  "memory": 256,
+  "ttl": 10,
+  "timeout": 10,
+  "minReplicas": 1,
+  "maxReplicas": 2,
+  "routes": {
+    "status": {
+      "path": "/_status",
+      "public": true
+    },
+    "getContactUs": {
+      "path": "/_v/custom/contact-us",
+      "public": true
+    }
+  }
+}

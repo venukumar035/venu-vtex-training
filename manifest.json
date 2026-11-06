@@ -1,0 +1,63 @@
+{
+  "vendor": "trika",
+  "name": "contact-list",
+  "version": "0.1.0",
+  "title": "Contact List",
+  "description": "Custom VTEX IO Contact List App",
+  "builders": {
+    "react": "3.x",
+    "store": "0.x",
+    "graphql": "2.x",
+    "node": "6.x"
+  },
+  "dependencies": {
+    "vtex.styleguide": "9.x",
+    "vtex.store-graphql": "2.x",
+    "vtex.css-handles": "0.x",
+    "vtex.device-detector": "0.x"
+  },
+  "settingsSchema": {
+    "title": "Contact List Settings",
+    "type": "object",
+    "access": "public",
+    "properties": {
+      "apiKey": {
+        "title": "API Key",
+        "description": "Enter the API Key",
+        "type": "string"
+      },
+      "appToken": {
+        "title": "VTEX App Token key",
+        "description": "Enter the app token from user & rules",
+        "type": "string"
+      }
+    }
+  },
+  "policies": [
+    {
+      "name": "ADMIN_DS"
+    },
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "api.vtex.com",
+        "path": "/*"
+      }
+    },
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "{{account}}.vtexcommercestable.com.br",
+        "path": "/*"
+      }
+    },
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "www.google.com",
+        "path": "/recaptcha/api/*"
+      }
+    }
+  ],
+  "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
+}

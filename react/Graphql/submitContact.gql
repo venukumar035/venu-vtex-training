@@ -1,0 +1,7 @@
+mutation SubmitContact($input: ContactFormInput!) {
+  submitContactForm(input: $input) {
+    success
+    id
+    message
+  }
+}

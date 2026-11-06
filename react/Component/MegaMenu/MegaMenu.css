@@ -1,0 +1,141 @@
+/* Container & Wrappers */
+.megaMenuContainer {
+  width: 100%;
+  background-color: var(--color-base, #ffffff);
+}
+
+.megaMenuDesktopWrapper {
+  width: 100%;
+}
+
+.menuListDesktop {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-5, 24px);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Menu Items */
+.menuItem {
+  position: relative;
+  padding: var(--spacing-4, 16px) 0;
+}
+
+.menuItemTitle {
+  text-decoration: none;
+  color: var(--color-base--inverted, #111111);
+  font-weight: 600;
+  font-size: var(--typography-body-font-size, 15px);
+  transition: color 0.2s ease-in-out;
+}
+
+.menuItemTitle:hover {
+  color: var(--color-action-primary, #0f3e99);
+}
+
+/* Flyout Submenu */
+.subMenuItemList {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 220px;
+  background-color: var(--color-base, #ffffff);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border-radius: var(--border-radius-2, 4px);
+  padding: var(--spacing-3, 8px) 0;
+  margin: 0;
+  list-style: none;
+  z-index: 999;
+}
+
+.subMenuItem {
+  list-style: none;
+}
+
+.menuLink {
+  display: block;
+  padding: var(--spacing-3, 8px) var(--spacing-5, 20px);
+  text-decoration: none;
+  color: var(--color-muted-1, #444444);
+  font-size: var(--typography-small-font-size, 14px);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.menuLink:hover {
+  background-color: var(--color-muted-5, #f5f5f5);
+  color: var(--color-action-primary, #0f3e99);
+}
+
+/* Three-dot More Button & Dropdown */
+.moreMenuItem {
+  position: relative;
+  padding: var(--spacing-4, 16px) 0;
+}
+
+.moreButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-2, 4px) var(--spacing-3, 8px);
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: var(--color-base--inverted, #111111);
+  border-radius: var(--border-radius-2, 4px);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.moreButton:hover {
+  background-color: var(--color-muted-5, #f5f5f5);
+  color: var(--color-action-primary, #0f3e99);
+}
+
+.moreDropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  min-width: 240px;
+  background-color: var(--color-base, #ffffff);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+  border-radius: var(--border-radius-2, 4px);
+  padding: var(--spacing-2, 6px) 0;
+  z-index: 1000;
+}
+
+.moreDropdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.moreSubItem {
+  border-bottom: 1px solid var(--color-muted-5, #f0f0f0);
+}
+
+.moreSubItem:last-child {
+  border-bottom: none;
+}
+
+/* Mobile Accordion */
+.megaMenuMobileWrapper {
+  width: 100%;
+}
+
+.mobileAccordionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-4, 14px) var(--spacing-5, 16px);
+  border-bottom: 1px solid var(--color-muted-5, #f0f0f0);
+  cursor: pointer;
+}
+
+.mobileAccordionToggle {
+  font-size: 12px;
+  color: var(--color-muted-2, #888888);
+}

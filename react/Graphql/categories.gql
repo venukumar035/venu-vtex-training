@@ -1,0 +1,19 @@
+query GetCategoriesTree($treeLevel: Int = 2) {
+  categories(treeLevel: $treeLevel) {
+    id
+    name
+    href
+    hasChildren
+    children {
+      id
+      name
+      href
+      hasChildren
+      children {
+        id
+        name
+        href
+      }
+    }
+  }
+}

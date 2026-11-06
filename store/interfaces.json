@@ -1,0 +1,21 @@
+{
+  "contact-list": {
+    "component": "ContactListGQL"
+  },
+  "custom-mega-menu": {
+    "component": "MegaMenu",
+    "composition": "blocks",
+    "render": "lazy"
+  },
+  "custom-footer": {
+    "component": "CustomFooter",
+    "composition": "blocks",
+    "render": "lazy"
+  },
+  "contact-list-api": {
+     "component": "ContactListAPI"
+  },
+  "contact-us-form": {
+    "component": "ContactUsForm"
+  }
+}

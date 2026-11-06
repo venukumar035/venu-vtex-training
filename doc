@@ -1,0 +1,39 @@
+----------------------- GRAPHQL CALL FLOW --------------------------------------
+
+React Component (ContactList.tsx)
+       │
+       ▼ sends query via Apollo
+react/graphql/GetContacts.gql
+       │
+       ▼ network request to /_v/graphql
+graphql/schema.graphql
+       │
+       ▼ routes request to
+node/resolvers/contacts.ts
+       │
+       ▼ fetches documents from
+VTEX Master Data (Entity 'CF')
+
+
+
+----------------------- API CALL FLOW --------------------------------------
+
+React Component (ContactListApi.tsx)
+       │
+       ▼ triggers HTTP GET via fetch()
+`/_v/custom/contact-us?page=1&pageSize=10`
+       │
+       ▼ matches path rule defined in
+node/service.json
+       │
+       ▼ executes route handler in
+node/index.ts (`routes.getContactUs`)
+       │
+       ▼ runs Koa middleware
+node/middlewares/getContactUs.ts (reads ctx.query, sets ctx.body)
+       │
+       ▼ calls custom client method
+node/clients/masterdata.ts (`getPaginatedData`)
+       │
+       ▼ fetches documents from
+VTEX Master Data (Entity 'CF')
